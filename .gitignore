@@ -29,4 +29,7 @@ buildNumber.properties
 #Testng
 test-output/
 
+#Logs
+log.output
+
 resources/drivers/
