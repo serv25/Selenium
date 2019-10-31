@@ -14,6 +14,6 @@ public abstract class Browser {
 		DRIVERS_DIR = System.getProperty("user.dir") + File.separator + "resources" + File.separator + "drivers";
 	}
 
-	abstract WebDriver getDriver();
+	public abstract WebDriver getDriver();
 
 }

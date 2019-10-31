@@ -10,7 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class ChromeBrowser extends Browser {
 
 	@Override
-	WebDriver getDriver() {
+	public WebDriver getDriver() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--test-type");
 		options.addArguments("--disable-popup-blocking");

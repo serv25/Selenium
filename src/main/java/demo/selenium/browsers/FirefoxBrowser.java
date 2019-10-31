@@ -11,7 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class FirefoxBrowser extends Browser {
 
 	@Override
-	WebDriver getDriver() {
+	public WebDriver getDriver() {
 		DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 
 		FirefoxProfile profile = new FirefoxProfile();

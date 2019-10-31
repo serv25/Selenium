@@ -6,7 +6,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 public class EdgeBrowser extends Browser {
 
 	@Override
-	WebDriver getDriver() {
+	public WebDriver getDriver() {
 		if (!OS.contains("Window")) {
 			throw new IllegalArgumentException("Edge browser is available only on Windows! Current OS: " + OS);
 		}
