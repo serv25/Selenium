@@ -17,6 +17,8 @@ public class FirefoxBrowser extends Browser {
 		FirefoxProfile profile = new FirefoxProfile();
 		profile.setAcceptUntrustedCertificates(true);
 		profile.setAssumeUntrustedCertificateIssuer(true);
+		profile.setPreference("capability.policy.default.Window.QueryInterface", "allAccess");
+		profile.setPreference("capability.policy.default.Window.frameElement.get", "allAccess");
 
 		capabilities.setCapability(FirefoxDriver.PROFILE, profile);
 		capabilities.setCapability("marionette", true);
