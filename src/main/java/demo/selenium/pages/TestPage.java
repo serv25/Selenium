@@ -25,6 +25,9 @@ public class TestPage {
 	@FindBy(xpath = "(//a[@href='./basic-first-form-demo.html'])[2]")
 	public WebElement simpleFormDemoLink;
 
+	@FindBy(xpath = "(//a[@href='./basic-checkbox-demo.html'])[2]")
+	public WebElement checkboxDemoLink;
+
 	public TestPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -55,4 +58,18 @@ public class TestPage {
 		simpleFormDemoLink.click();
 		return new SimpleFormPage(driver);
 	}
+
+	public CheckboxPage clickOnCheckboxDemoLink() {
+		if (!inputFormsLink.isDisplayed()) {
+			log.info("Click on \'Input Forms\' link");
+			wait.until(ExpectedConditions.elementToBeClickable(inputFormsLink));
+			inputFormsLink.click();
+		}
+
+		log.info("Click on \'Checkbox Demo\' link");
+		wait.until(ExpectedConditions.elementToBeClickable(checkboxDemoLink));
+		checkboxDemoLink.click();
+		return new CheckboxPage(driver);
+	}
+
 }
