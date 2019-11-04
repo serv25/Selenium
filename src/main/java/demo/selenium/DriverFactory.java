@@ -10,7 +10,7 @@ public class DriverFactory {
 
 	public static WebDriver getDriver() {
 
-		String browser = System.getProperty("browser", "Firefox");
+		String browser = System.getProperty("browser", "Chrome");
 
 		if (browser.equalsIgnoreCase("Chrome")) {
 			return new ChromeBrowser().getDriver();

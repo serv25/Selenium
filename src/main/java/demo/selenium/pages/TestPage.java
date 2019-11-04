@@ -28,6 +28,9 @@ public class TestPage {
 	@FindBy(xpath = "(//a[@href='./basic-checkbox-demo.html'])[2]")
 	public WebElement checkboxDemoLink;
 
+	@FindBy(xpath = "(//a[@href='./basic-radiobutton-demo.html'])[2]")
+	public WebElement radioButtonsDemoLink;
+
 	public TestPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -70,6 +73,19 @@ public class TestPage {
 		wait.until(ExpectedConditions.elementToBeClickable(checkboxDemoLink));
 		checkboxDemoLink.click();
 		return new CheckboxPage(driver);
+	}
+
+	public RadioButtonsPage clickOnRadioButtonsDemoLink() {
+		if (!inputFormsLink.isDisplayed()) {
+			log.info("Click on \'Input Forms\' link");
+			wait.until(ExpectedConditions.elementToBeClickable(inputFormsLink));
+			inputFormsLink.click();
+		}
+
+		log.info("Click on \'Radio Buttons Demo\' link");
+		wait.until(ExpectedConditions.elementToBeClickable(radioButtonsDemoLink));
+		radioButtonsDemoLink.click();
+		return new RadioButtonsPage(driver);
 	}
 
 }

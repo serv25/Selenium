@@ -24,27 +24,27 @@ public class CheckboxTest extends TestBase {
 		checkboxPage = testPage.clickOnCheckboxDemoLink();
 	}
 
-	@Test
+	@Test(description = "Test single checkbox is selected after clicking on it")
 	public void singleCheckboxTest() {
 		checkboxPage.clickOnSingleCheckbox();
 		Assert.assertTrue(checkboxPage.isSingleCheckboxSelected(),
 				"Success message should be displayed when checkbox is selected!");
 	}
 
-	@Test
+	@Test(description = "Button \'Check All\' should have default text \'Check All\'")
 	public void checkAllBtnTest() {
 		String actualText = checkboxPage.getCheckAllBtnText();
 		Assert.assertEquals(actualText, "Check All", "By default button\'s text should be \'Check All\'");
 	}
 
-	@Test
+	@Test(description = "Button \'Check All\' should have text \'Uncheck All\' after clicking on it")
 	public void checkAllBtnTest2() {
 		checkboxPage.clickOncheckAllBtn();
 		String actualText = checkboxPage.getCheckAllBtnText();
 		Assert.assertEquals(actualText, "Uncheck All", "Button\'s text should be \'Uncheck All\'");
 	}
 
-	@Test
+	@Test(description = "When 3 checkboxs are selected - button \'Check All\' should change text to \'Uncheck All\'")
 	public void multipleCheckboxTest() {
 		checkboxPage.clickOnOption1Checkbox();
 		checkboxPage.clickOnOption2Checkbox();

@@ -14,6 +14,8 @@ public class ChromeBrowser extends Browser {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--test-type");
 		options.addArguments("--disable-popup-blocking");
+		options.addArguments("--disable-gpu");
+		options.addArguments("--headless");
 
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		capabilities.setJavascriptEnabled(true);

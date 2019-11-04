@@ -24,6 +24,9 @@ public class ReportUtil {
 		reporter.config().setTheme(Theme.STANDARD);
 
 		extentReports = new ExtentReports();
+		extentReports.setSystemInfo("Environment", System.getProperty("environment"));
+		extentReports.setSystemInfo("Browser", System.getProperty("browser"));
+		extentReports.setSystemInfo("OS", System.getProperty("os.name"));
 		extentReports.attachReporter(reporter);
 	}
 }
