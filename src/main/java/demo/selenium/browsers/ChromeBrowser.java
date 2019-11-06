@@ -16,6 +16,8 @@ public class ChromeBrowser extends Browser {
 		options.addArguments("--disable-popup-blocking");
 		options.addArguments("--disable-gpu");
 		options.addArguments("--headless");
+		options.addArguments("--no-sandbox");
+		options.addArguments("--window-size=1366,768");
 
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		capabilities.setJavascriptEnabled(true);
@@ -27,7 +29,6 @@ public class ChromeBrowser extends Browser {
 		} else if (OS.contains("Mac")) {
 			setChromeProperties(DRIVERS_DIR + File.separator + "mac" + File.separator + "chromedriver");
 		} else if (OS.contains("Linux")) {
-			options.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
 			setChromeProperties(DRIVERS_DIR + File.separator + "linux" + File.separator + "chromedriver");
 		} else {
 			throw new IllegalArgumentException("Unknown OS: " + OS);

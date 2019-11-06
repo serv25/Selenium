@@ -31,6 +31,9 @@ public class TestPage {
 	@FindBy(xpath = "(//a[@href='./basic-radiobutton-demo.html'])[2]")
 	public WebElement radioButtonsDemoLink;
 
+	@FindBy(xpath = "(//a[@href='./basic-select-dropdown-demo.html'])[2]")
+	public WebElement selectDropdownListLink;
+
 	public TestPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -86,6 +89,19 @@ public class TestPage {
 		wait.until(ExpectedConditions.elementToBeClickable(radioButtonsDemoLink));
 		radioButtonsDemoLink.click();
 		return new RadioButtonsPage(driver);
+	}
+
+	public SelectDropdownListPage clickOnSelectDropdownListLink() {
+		if (!inputFormsLink.isDisplayed()) {
+			log.info("Click on \'Input Forms\' link");
+			wait.until(ExpectedConditions.elementToBeClickable(inputFormsLink));
+			inputFormsLink.click();
+		}
+
+		log.info("Click on \'Select Dropdown List\' link");
+		wait.until(ExpectedConditions.elementToBeClickable(selectDropdownListLink));
+		selectDropdownListLink.click();
+		return new SelectDropdownListPage(driver);
 	}
 
 }
